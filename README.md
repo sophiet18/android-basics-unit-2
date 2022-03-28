@@ -1,4 +1,4 @@
-# Classes &　Inheritances
+# Classes & Inheritances
 
 **mar 28**
 
