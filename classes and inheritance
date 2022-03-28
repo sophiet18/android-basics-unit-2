@@ -1,19 +1,16 @@
-abstract class Dwelling(private var residents: Int) {
-abstract val buildingMaterial : String  
-abstract val capacity: Int
-}
-
-	// one could pass in dwelling(3) but for the program to be more flexible, 
-    // declare residents as a parameter NOT A VAL (remember residents was a private val??)
-class SquareCabin(residents: Int): Dwelling(residents){
+abstract class Dwelling(private val residents){
+    abstract val buildingMaterial: String
+    abstract val capacity: Int
     
+    fun hasRoom():Boolean{
+        return residents < capacity
+    }
 }
 
-fun hasRoom(): Boolean{
-    return residents < capacity 
-}
+// one could pass in dwelling(3) but for the program to be more flexible, declare residents as a parameter NOT A VAL (remember residents was a private val??)
 
-
-fun main() {
-   
+class SquareCabin(residents: Int): Dwelling(residents){
+    override val buildingMaterial = "Wood"
+    override val capacity = 6
+    
 }
