@@ -3,6 +3,12 @@ abstract val buildingMaterial : String
 abstract val capacity: Int
 }
 
+	// one could pass in dwelling(3) but for the program to be more flexible, 
+    // declare residents as a parameter NOT A VAL (remember residents was a private val??)
+class SquareCabin(residents: Int): Dwelling(residents){
+    
+}
+
 fun hasRoom(): Boolean{
     return residents < capacity 
 }
