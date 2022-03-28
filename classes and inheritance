@@ -1,6 +1,7 @@
 fun main(){
     val squareCabin = SquareCabin(6)
     val roundHut = RoundHut(3)
+    val roundTower = RoundTower(4)
     
     with(squareCabin){
     println("\n Square Cabin \n ~~~~~~~~~~~")
@@ -11,6 +12,13 @@ fun main(){
     
      with(roundHut){
         println("\n Round Hut \n ---------------")
+        println("Capacity: ${capacity}")
+        println("Material: ${buildingMaterial}")
+        println("Has room?: ${hasRoom()}")
+    }
+    
+    with(roundTower){
+        println("\n Round Tower \n ===========")
         println("Capacity: ${capacity}")
         println("Material: ${buildingMaterial}")
         println("Has room?: ${hasRoom()}")
@@ -33,7 +41,13 @@ class SquareCabin(residents: Int): Dwelling(residents){
     
 }
 
-class RoundHut(residents: Int): Dwelling(residents) {
+//open keyword added before class declaration as kotlin classes are final and cannot be subclassed by default
+open class RoundHut(residents: Int): Dwelling(residents) {
     override val buildingMaterial = "Straw"
+    override val capacity = 4
+}
+
+ class RoundTower(residents:Int): RoundHut(residents){
+    override val buildingMaterial = "Stone"
     override val capacity = 4
 }
