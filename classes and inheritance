@@ -41,13 +41,13 @@ class SquareCabin(residents: Int): Dwelling(residents){
     
 }
 
-//open keyword added before class declaration as kotlin classes are final and cannot be subclassed by default
 open class RoundHut(residents: Int): Dwelling(residents) {
     override val buildingMaterial = "Straw"
     override val capacity = 4
 }
 
- class RoundTower(residents:Int): RoundHut(residents){
+ class RoundTower(residents:Int, val floors:Int = 2): RoundHut(residents){
     override val buildingMaterial = "Stone"
-    override val capacity = 4
+    override val capacity = 4 * floors
 }
+
