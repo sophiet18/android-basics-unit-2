@@ -1,10 +1,12 @@
 fun main(){
     val squareCabin = SquareCabin(6)
     
+    with(squareCabin){
     println("\n Square Cabin \n ~~~~~~~~~~~")
-    println("Capacity: ${squareCabin.capacity}")
-    println("Matreial: ${squareCabin.buildingMaterial}")
-    println("Has room?: ${squareCabin.hasRoom()}")
+    println("Capacity: ${capacity}")
+    println("Matreial: ${buildingMaterial}")
+    println("Has room?: ${hasRoom()}")  
+    }
 }
 
 abstract class Dwelling(private val residents){
